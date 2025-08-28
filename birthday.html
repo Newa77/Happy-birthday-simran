@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Bestie!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 400px;
+      width: 95vw;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(60,60,60,0.15);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff4081;
+      margin-bottom: 0.5em;
+      font-size: 2.2em;
+    }
+    .subtitle {
+      color: #43c6ac;
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
+    }
+    .photo {
+      width: 100%;
+      border-radius: 15px;
+      margin: 1.2em 0;
+      box-shadow: 0 4px 16px rgba(67,198,172,0.12);
+    }
+    .btn {
+      display: inline-block;
+      background: #ff4081;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      margin-top: 1.5em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn.alt {
+      background: #43c6ac;
+    }
+    .btn:hover {
+      background: #e73370;
+    }
+    .btn.alt:hover {
+      background: #369e8f;
+    }
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="page1">
+    <h1>Happy Birthday, Bestie! 🎉</h1>
+    <div class="subtitle">Sending love all the way to Australia 🇦🇺</div>
+    <img src="images/5.png" alt="Birthday Photo 1" class="photo">
+    <div>Swipe or click next to see more memories!</div>
+    <button class="btn" onclick="showPage(2)">Next</button>
+  </div>
+  <div class="container" id="page2" style="display:none;">
+    <h1>Birthday Memories</h1>
+    <div class="subtitle">Remember this day? 😄</div>
+    <img src="images/1.png" alt="Birthday Photo 2" class="photo">
+    <div>Wishing you all the happiness in the world!</div>
+    <button class="btn alt" onclick="showPage(3)">Next</button>
+    <button class="btn" style="margin-left:10px;" onclick="showPage(1)">Back</button>
+  </div>
+  <div class="container" id="page3" style="display:none;">
+    <h1>Best Wishes!</h1>
+    <div class="subtitle">No matter the distance, you're always close to my heart 💖</div>
+    <img src="images/3.png" alt="Birthday Photo 3" class="photo">
+    <div>Hope your day is as amazing as you are!</div>
+    <button class="btn alt" onclick="showPage(4)">Next</button>
+    <button class="btn" style="margin-left:10px;" onclick="showPage(2)">Back</button>
+  </div>
+  <div class="container" id="page4" style="display:none;">
+    <h1>With Love from Afar</h1>
+    <div class="subtitle">Happy Birthday again! 🎂</div>
+    <div style="font-size:1.1em; margin:1.5em 0;">May your year be filled with adventure, laughter, and all your dreams coming true. <br> Can't wait to celebrate together soon! 🌏💌</div>
+    <button class="btn" onclick="showPage(1)">Back to Start</button>
+    <button class="btn alt" style="margin-left:10px;" onclick="showPage(3)">Back</button>
+  </div>
+  <script>
+    function showPage(pageNum) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('page' + i).style.display = (i === pageNum) ? 'block' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>
